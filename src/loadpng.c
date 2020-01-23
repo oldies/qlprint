@@ -70,7 +70,7 @@ ql_raster_image_t *loadpng(const char *path)
   if (!row_ptrs)
     goto destroy_read_out;
 
-  const unsigned row_bytes = width * sizeof(png_byte);
+  const unsigned row_bytes = png_get_rowbytes(png_ptr, info_ptr);
   ql_raster_image_t *img =
     calloc(1, sizeof(ql_raster_image_t) + height * row_bytes);
   if (!img)
