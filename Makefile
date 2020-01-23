@@ -25,7 +25,7 @@ build/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 build/qlprint: $(OBJS)
-	$(CC) $(LDFLAGS) $^ -o $@
+	$(CC) $(LDFLAGS) $^ -o $@ $(LDFLAGS)
 
 $(OBJS): $(wildcard include/*) Makefile
 
